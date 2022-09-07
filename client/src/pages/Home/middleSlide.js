@@ -33,11 +33,13 @@ const MiddleSlide = () => {
         <Carousel >
         {Images.map(review => (
           <Carousel.Item key={review.id}>
+            <div className="flex justify-center" >
             <img
               className="p-20"
               src={review.imageSrc}
               alt="salonImage"
             />
+            </div>
             {/* <Carousel.Caption>
               <h3>{review.author}</h3>
               <p>{review.content}</p>

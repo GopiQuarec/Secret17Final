@@ -12,6 +12,7 @@ import { Membership } from "../../services/services";
 import swal from "sweetalert";
 
 import "./footer.css";
+import { NavLink } from "react-router-dom";
 
 // import "../../styles/sell_machine.css";
 
@@ -59,12 +60,12 @@ const Footer = () => {
               Important Links
             </div>
             <div className="animate-fade-in-down mb-8 text-lg text-black flex flex-col">
-              <label>Home</label>
-              <label>Our Services</label>
-              <label>Portfolio</label>
-              <label>Blogs</label>
-              <label>About Us</label>
-              <label>Contact us</label>
+              <NavLink to="/">Home</NavLink>
+              <NavLink to="/services">Our Services</NavLink>
+              <NavLink to="/portfolio">Portfolio</NavLink>
+              <NavLink to="/blogs">Blogs</NavLink>
+              <NavLink to="/about">About Us</NavLink>
+              <NavLink to="/contact">Contact us</NavLink>
             </div>
           </div>
 
