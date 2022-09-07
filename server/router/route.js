@@ -10,45 +10,7 @@ const User = require("../model/appointmentSchema");
 const blogSchema = require("../model/blogSchema");
 const Reviews = require("../model/reviews");
 const Membership = require("../model/MembershipSchema");
-// const multer = require("multer");
 
-// Create Storage
-// const storage = multer.diskStorage({
-//   destination: (req, file, callback) => {
-//     callback(null, "./client/public/uploads");
-//   },
-//   filename: (req, file, callback) => {
-//     console.log("-----file------",file)
-//     callback(null, file.originalname);
-//   },
-// });
-
-// const upload = multer({ storage: storage });
-
-// Create new user Registration
-// router.post("/signup", async (req, res) => {
-//   const { name, email, password, cpassword } = req.body;
-
-//   if (!name || !email || !password || !cpassword) {
-//     return res.status(400).send("Please fill all the fields");
-//   }
-//   try {
-//     const userExist = await Users.findOne({ email: email });
-//     if (userExist) {
-//       return res.status(400).send("User already exists");
-//     } else if (password !== cpassword) {
-//       return res.status(400).send("Password does not match");
-//     } else {
-//       const user = new Users({ name, email, password, cpassword });
-
-//       await user.save();
-//       res.status(200).send("User created successfully");
-//     }
-//   } catch (err) {
-//     res.status(500).send(err);
-//   }
-// });
-// Register
 
 router.post("/register", async (req, res) => {
   const { email, password, cpassword } = req.body;
@@ -111,24 +73,6 @@ router.post("/signin", async (req, res) => {
     console.log(err);
   }
 });
-// Blog api
-
-// router.post("/blog", upload.single("atricleImage"), (req, res) => {
-  
-//   const newArticle = new blogSchema({
-//     title: req.body.title,
-//     article: req.body.article,
-//     authorname: req.body.authorname,
-//     articleImage: req.file.originalname,
-//     category: req.body.category,
-//   });
-//   console.log(req.file.originalname);
-//   newArticle
-//     .save()
-//     .then(() => res.json("new article posted"))
-//     .catch((err) => res.status(400).json(`Error: ${err}`));
-// });
-
 router.post("/blog", async (req, res) => {
   try {
     const blog = await blogSchema.create(req.body);

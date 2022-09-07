@@ -1,4 +1,4 @@
-export const DevURL = "http://156.67.219.205/server/"
+export const DevURL = process.env.REACT_APP_API_URL
 
 // ? Authentication URL
 export const LOGIN_URL = "signin";
