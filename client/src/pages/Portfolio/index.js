@@ -44,9 +44,9 @@ const Portfolio = () => {
               src={Contact}
               alt="contact"
             />
-            <h6 className="w-100 position-absolute text-white my-auto text-4xl">
+            <h3 className="w-100 position-absolute text-white my-auto text-5xl">
               Portfolio
-            </h6>
+            </h3>
           </div>
         </section>
       </div>

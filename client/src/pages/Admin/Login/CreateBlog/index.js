@@ -267,7 +267,7 @@ const AddPost = () => {
           >
             {({ errors, touched, values, handleChange }) => (
               <Form>
-                <Label for="title">Blog title</Label>
+                <h3 for="title">Blog title</h3>
                 <CustomInput
                   type="text"
                   placeholder="Enter blog title"
@@ -279,7 +279,7 @@ const AddPost = () => {
                   errors={errors}
                 />
 
-                <Label for="title">Blog Content</Label>
+                <h3 for="title">Blog Content</h3>
 
                 <Input
                   type="textarea"
@@ -301,9 +301,9 @@ const AddPost = () => {
                 {/* <Example onChange={handleChange} />
                       <div dangerouslySetInnerHTML={{ __html: content }}></div> */}
 
-                <Label for="title" className="mt-4">
+                <h3 for="title" className="mt-4">
                   Author Name
-                </Label>
+                </h3>
                 <CustomInput
                   type="text"
                   placeholder="Enter author name"
@@ -315,7 +315,7 @@ const AddPost = () => {
                   errors={errors}
                 />
 
-                <Label for="title">Upload Blog Image</Label>
+                <h3 for="title">Upload Blog Image</h3>
                 <Input
                   type="file"
                   onChange={(e) => setFile(e.target.files[0])}
@@ -358,9 +358,9 @@ const AddPost = () => {
                   </section>
                 </div> */}
 
-                <Label for="title" className="mt-4">
+                <h3 for="title" className="mt-4">
                   Select Category
-                </Label>
+                </h3>
                 <Select
                   name="category"
                   options={Options}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Label, Row, Col, Button } from "reactstrap";
+import { Row, Col, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import { GetBlogDetail } from "../../../services/services";
 
@@ -29,7 +29,6 @@ const HairSpa = () => {
       return Blogarticle;
     }
     return article;
-    // console.log("--------Article-------",article)
   };
 
   return (
@@ -49,12 +48,12 @@ const HairSpa = () => {
                   </div>
                   <div className="flex justify-center">
                     <div className="w-96 p-2  my-3 drop-shadow-lg bg-gradient-to-b from-black via-stone-800 to-stone-400 ...">
-                      <Label className="text-xl flex justify-center text-white">
+                      <h3 className="text-xl flex justify-center text-white">
                         {data && data.title}
-                      </Label>
-                      <Label className="flex justify-center text-white">
+                      </h3>
+                      <h4 className="flex justify-center text-white">
                         {data && data.article && blogArtical(data.article)}
-                      </Label>
+                      </h4>
                       <div className="flex justify-center">
                         <Link to={{ pathname: "/blogs-detail", state: data }}>
                           <Button

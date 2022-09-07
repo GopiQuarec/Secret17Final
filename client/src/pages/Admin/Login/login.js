@@ -55,7 +55,7 @@ const Login = () => {
         >
           {({ errors, touched, values, handleChange }) => (
             <Form>
-              <label>Email</label>
+              <h4>Email</h4>
               <CustomInput
                 className="loginInput"
                 type="text"
@@ -67,7 +67,7 @@ const Login = () => {
                 errors={errors}
               />
 
-              <label>Password</label>
+              <h4>Password</h4>
               <CustomInput
                 className="loginInput"
                 type="password"
@@ -84,13 +84,6 @@ const Login = () => {
             </Form>
           )}
         </Formik>
-        {/* <form className="loginForm">
-        <label>Email</label>
-        <input className="loginInput" type="text" placeholder="Enter your email..." />
-        <label>Password</label>
-        <input className="loginInput" type="password" placeholder="Enter your password..." />
-        <button className="loginButton">Login</button>
-      </form> */}
         <NotificationContainer />
       </div>
     </>

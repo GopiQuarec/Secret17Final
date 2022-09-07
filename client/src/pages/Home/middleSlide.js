@@ -1,14 +1,9 @@
 import React from "react";
 import Slide2 from "../../assets/images/slide2.png";
-import { Label } from "reactstrap";
-import AwesomeSlider from "react-awesome-slider";
-import "react-awesome-slider/dist/styles.css";
-import  Carousel from "react-bootstrap/Carousel"
-import "./home.css"
+import Carousel from "react-bootstrap/Carousel";
+import "./home.css";
 
 const MiddleSlide = () => {
-  
-
   const Images = [
     {
       imageSrc: Slide2,
@@ -26,26 +21,22 @@ const MiddleSlide = () => {
         className="bg-black"
         // style={{ overflowX: "hidden", overflowY: "hidden" }}
       >
-        <Label className="text-white text-3xl flex justify-center p-8">
+        <h3 className="text-white text-4xl flex justify-center p-8">
           Luxury Experience at Secret 17
-        </Label>
+        </h3>
         {/* <div> */}
-        <Carousel >
-        {Images.map(review => (
-          <Carousel.Item key={review.id}>
-            <div className="flex justify-center" >
-            <img
-              className="p-20"
-              src={review.imageSrc}
-              alt="salonImage"
-            />
-            </div>
-            {/* <Carousel.Caption>
+        <Carousel>
+          {Images.map((review) => (
+            <Carousel.Item key={review.id}>
+              <div className="flex justify-center">
+                <img className="pb-20" src={review.imageSrc} alt="salonImage" />
+              </div>
+              {/* <Carousel.Caption>
               <h3>{review.author}</h3>
               <p>{review.content}</p>
             </Carousel.Caption> */}
-          </Carousel.Item>
-        ))}
+            </Carousel.Item>
+          ))}
         </Carousel>
       </div>
       {/* </div> */}

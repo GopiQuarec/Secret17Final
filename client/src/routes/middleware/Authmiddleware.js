@@ -4,6 +4,7 @@ import { Route, Redirect } from "react-router-dom";
 import HeaderRes from "../../components/Header/headerres";
 import Footer from "../../components/Footer/footer";
 import FooterDark from "../../components/Footer/footerDark";
+import ScrollToTop from "../../components/Custom/ScrollToTop";
 import { STORAGEKEY } from "../../Constant";
 
 const path = window.location.pathname;
@@ -30,6 +31,7 @@ const Authmiddleware = ({
           {path === "/admin" || path === "/add-blog" ? null : <HeaderRes />}
 
           <Component {...props} />
+          <ScrollToTop/>
           {path === "/blogs" ? (
             <FooterDark />
           ) : (

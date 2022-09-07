@@ -2,8 +2,8 @@ import React from "react";
 // import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 // import { Carousel } from 'react-responsive-carousel';
 
-import  Carousel from "react-bootstrap/Carousel"
-import "./home.css"
+import Carousel from "react-bootstrap/Carousel";
+import "./home.css";
 // import AwesomeSlider from "react-awesome-slider";
 // import "react-awesome-slider/dist/styles.css";
 
@@ -12,6 +12,7 @@ import "./home.css"
 // import "slick-carousel/slick/slick-theme.css";
 
 const DownSlide = () => {
+  const path = window.location.pathname;
   // const settings = {
   //   dots: true,
   //   infinite: true,
@@ -48,43 +49,79 @@ const DownSlide = () => {
   return (
     <React.Fragment>
       <div
-        className="b-white my-20"
+        // className="bg-red-500 my-10 py-10"
+        className={`${
+          path === "/" ? "bg-white my-10 py-10" : "bg-black my-10 py-10"
+        }`}
         // style={{ overflowX: "hidden", overflowY: "hidden" }}
       >
-        <label className="text-3xl flex justify-center">
+        <h3
+          className={`${
+            path === "/"
+              ? "text-black text-4xl flex justify-center m-2"
+              : "text-white text-4xl flex justify-center m-2"
+          }`}
+        >
           What Our Customer Says For Us.
-        </label>
-        <Carousel centerMode infiniteLoop>
+        </h3>
+        <Carousel centerMode infiniteLoop className="px-10">
           {SliderData.map((data, i) => {
             return (
-          <Carousel.Item key={data.id}>
-
-              <div className="mt-5">
-                <div className="bg-black p-10 w-auto italic rounded-full">
-                  <div className="p-5">
-                    <label className="text-white text-center flex justify-center text-xl">
-                      {" "}
-                      {data.line1}
-                    </label>
-                    <label className="text-white text-center flex justify-center text-xl">
-                      {" "}
-                      {data.line2}
-                    </label>
-                    <label className="text-white text-center flex justify-center text-xl">
-                      {" "}
-                      {data.line3}
-                    </label>
-                    <label className="float-right text-white p-2">
-                      {data.by}
-                    </label>
+              <Carousel.Item key={data.id}>
+                <div className="mt-5">
+                  <div
+                    className={`${
+                      path === "/"
+                        ? "bg-black p-10 w-auto italic rounded-full"
+                        : "bg-white p-10 w-auto italic rounded-full"
+                    }`}
+                  >
+                    <div className="p-5">
+                      <h4
+                        className={`${
+                          path === "/"
+                            ? "text-white text-center flex justify-center text-2xl"
+                            : "text-black text-center flex justify-center text-2xl"
+                        }`}
+                      >
+                        {" "}
+                        {data.line1}
+                      </h4>
+                      <h4
+                        className={`${
+                          path === "/"
+                            ? "text-white text-center flex justify-center text-2xl"
+                            : "text-black text-center flex justify-center text-2xl"
+                        }`}
+                      >
+                        {" "}
+                        {data.line2}
+                      </h4>
+                      <h4
+                        className={`${
+                          path === "/"
+                            ? "text-white text-center flex justify-center text-2xl"
+                            : "text-black text-center flex justify-center text-2xl"
+                        }`}
+                      >
+                        {" "}
+                        {data.line3}
+                      </h4>
+                      <h4
+                        className={`${
+                          path === "/"
+                            ? "float-right text-white p-2"
+                            : "float-right text-black p-2"
+                        }`}
+                      >
+                        {data.by}
+                      </h4>
+                    </div>
                   </div>
                 </div>
-              </div>
-          </Carousel.Item>
-
+              </Carousel.Item>
             );
           })}
-          
         </Carousel>
       </div>
     </React.Fragment>

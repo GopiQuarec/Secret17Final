@@ -2,14 +2,14 @@ import React from "react";
 import Logo from "../../assets/images/logoDark.png";
 import Instagram from "../../assets/icons/Instagram.jpg";
 import Facebook from "../../assets/icons/Facebook.png";
-// import Snapchat from "../../assets/icons/Snapchat.png";
 import { Button } from "reactstrap";
 import CustomInput from "../../components/Custom/textinput";
-// import { Label, Row, Col, Button } from "reactstrap";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { Membership } from "../../services/services";
 import swal from "sweetalert";
+import { NavLink } from "react-router-dom";
+
 
 import "./footer.css";
 
@@ -47,24 +47,24 @@ const FooterDark  = () => {
               src={Logo}
               alt="Logo"
             />
-            <label className="text-white mt-10">
+            <h4 className="text-white mt-10 text-xl">
               Secret 17 is a unisex <br /> beauty salon based in Ahmedabad.{" "}
               <br /> It is a place where you can pamper <br /> yourself with a
               new look every day
-            </label>
+            </h4>
           </div>
 
-          <div className="mr-20">
+          <div className="ml-20">
             <div className="animate-fade-in-down mb-1 text-xl text-white font-bold mt-2 ">
               Important Links
             </div>
             <div className="animate-fade-in-down mb-8 text-lg text-white flex flex-col">
-              <label>Home</label>
-              <label>Our Services</label>
-              <label>Portfolio</label>
-              <label>Blogs</label>
-              <label>About Us</label>
-              <label>Contact us</label>
+            <NavLink to="/" className="text-xl">Home</NavLink>
+              <NavLink to="/services" className="text-xl">Our Services</NavLink>
+              <NavLink to="/portfolio" className="text-xl">Portfolio</NavLink>
+              <NavLink to="/blogs" className="text-xl">Blogs</NavLink>
+              <NavLink to="/about" className="text-xl">About Us</NavLink>
+              <NavLink to="/contact" className="text-xl">Contact us</NavLink>
             </div>
           </div>
 
@@ -72,17 +72,17 @@ const FooterDark  = () => {
             <div className="animate-fade-in-down mb-1  text-xl text-white font-bold mt-2">
               Contact Us
             </div>
-            <div className="animate-fade-in-down mb-8  text-md text-white flex flex-col">
-              <label>
+            <div className="animate-fade-in-down mb-8  text-md text-white flex flex-col text-xl">
+              <h4>
                 <b>Address:</b> 102, Arista Bussiness Space 3, Sindhu Bhavan
                 Marg, opp. HOF Showroom, Ahmedabad, Gujarat 380054
-              </label>
-              <label>
+              </h4>
+              <h4>
                 <b>Phone:</b> 063573 63574
-              </label>
-              <label>
+              </h4>
+              <h4>
                 <b>Email I’d:</b> secret7teen@gmail.com
-              </label>
+              </h4>
             </div>
           </div>
 
@@ -90,16 +90,16 @@ const FooterDark  = () => {
             <div className="animate-fade-in-down mb-1  text-xl text-white font-bold font-boldmt-2">
               Opening Hours
             </div>
-            <div className="animate-fade-in-down mb-8 text-md text-white flex flex-col">
-              <label>
+            <div className="animate-fade-in-down mb-8 text-md text-white flex flex-col text-xl">
+              <h4>
                 <b>Monday to Friday :- </b> 10:00 am to 9:30 pm
-              </label>
-              <label>
+              </h4>
+              <h4>
                 <b> Saturday :- </b> 10:00 am to 9:30 pm
-              </label>
-              <label>
+              </h4>
+              <h4>
                 <b>Sunday :- </b> 10:00 am to 9:30 pm
-              </label>
+              </h4>
             </div>
 
             <div className="animate-fade-in-down mb-1 text-xl text-white font-bold font-boldmt-2">
@@ -147,10 +147,10 @@ const FooterDark  = () => {
           </div>
         </div>
         <div className="bg-black">
-          <label className="flex justify-center text-white p-2">
+          <h4 className="flex justify-center text-white p-2 text-xl">
             Copyrights © {new Date().getFullYear()} All Rights Reserved |
             Secret17
-          </label>
+          </h4>
         </div>
       </div>
     </React.Fragment>

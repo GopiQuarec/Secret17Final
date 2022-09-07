@@ -19,22 +19,22 @@ const HeaderRes = () => {
         </div>
         <ul className={click ? "nav-options active" : "nav-options"}>
           <li className="option" onClick={closeMobileMenu}>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" className="text-xl">Home</NavLink>
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            <NavLink to="/services">Services</NavLink>
+            <NavLink to="/services" className="text-xl">Services</NavLink>
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            <NavLink to="/portfolio">Portfolio</NavLink>
+            <NavLink to="/portfolio" className="text-xl">Portfolio</NavLink>
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            <NavLink to="/blogs">Blogs</NavLink>
+            <NavLink to="/blogs" className="text-xl">Blogs</NavLink>
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            <NavLink to="/about">About Us</NavLink>
+            <NavLink to="/about" className="text-xl">About Us</NavLink>
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            <NavLink to="/contact">Contact Us</NavLink>
+            <NavLink to="/contact" className="text-xl">Contact Us</NavLink>
           </li>
         </ul>
       </div>

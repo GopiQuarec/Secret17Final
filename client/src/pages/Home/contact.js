@@ -2,7 +2,7 @@ import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import CustomInput from "../../components/Custom/textinput";
-import { Button, Row, Col, Label } from "reactstrap";
+import { Button, Row, Col } from "reactstrap";
 import SalonImage from "../../assets/images/contactSalon.png";
 
 import swal from "sweetalert";
@@ -47,71 +47,72 @@ const Contact = () => {
 
   return (
     <React.Fragment>
-      <div className="bg-black "
-      // style={{overflowX:"hidden"}}
+      <div
+        className="bg-black "
+        // style={{overflowX:"hidden"}}
       >
         <div className="grid grid-cols-1 ">
-        <Row>
-          <Col>
-            <div className="m-10 flex justify-center w-72 lg:w-auto">
-              <img src={SalonImage} alt="salon" />
-            </div>
-          </Col>
+          <Row>
+            <Col>
+              <div className="m-10 flex justify-center w-72 lg:w-auto">
+                <img src={SalonImage} alt="salon" />
+              </div>
+            </Col>
 
-          <Col className="m-10">
-            <Formik
-              initialValues={{
-                fullname: "",
-                email: "",
-                phone: "",
-              }}
-              validationSchema={contactUsSchema}
-              onSubmit={handleSubmit}
-            >
-              {({ errors, touched, values, handleChange }) => (
-                <Form>
-                  <Label className="text-white">Name</Label>
-                  <CustomInput
-                    type="text"
-                    name="fullname"
-                    values={values}
-                    handleChange={handleChange}
-                    touched={touched}
-                    errors={errors}
-                    className="w-full"
-                    placeholder="Enter Your Full Name"
-                  />
+            <Col className="m-10">
+              <Formik
+                initialValues={{
+                  fullname: "",
+                  email: "",
+                  phone: "",
+                }}
+                validationSchema={contactUsSchema}
+                onSubmit={handleSubmit}
+              >
+                {({ errors, touched, values, handleChange }) => (
+                  <Form>
+                    <h3 className="text-white">Name</h3>
+                    <CustomInput
+                      type="text"
+                      name="fullname"
+                      values={values}
+                      handleChange={handleChange}
+                      touched={touched}
+                      errors={errors}
+                      className="w-full"
+                      placeholder="Enter Your Full Name"
+                    />
 
-                  <Label className="text-white">Email</Label>
-                  <CustomInput
-                    type="text"
-                    name="email"
-                    values={values}
-                    handleChange={handleChange}
-                    touched={touched}
-                    errors={errors}
-                    placeholder="Enter Your Email I'd"
-                  />
+                    <h3 className="text-white">Email</h3>
+                    <CustomInput
+                      type="text"
+                      name="email"
+                      values={values}
+                      handleChange={handleChange}
+                      touched={touched}
+                      errors={errors}
+                      placeholder="Enter Your Email I'd"
+                    />
 
-                  <Label className="text-white">Phone Number</Label>
-                  <CustomInput
-                    type="text"
-                    name="phone"
-                    values={values}
-                    handleChange={handleChange}
-                    touched={touched}
-                    errors={errors}
-                    placeholder="Enter Your Phone Number"
-                  />
+                    <h3 className="text-white">Phone Number</h3>
+                    <CustomInput
+                      type="text"
+                      name="phone"
+                      values={values}
+                      handleChange={handleChange}
+                      touched={touched}
+                      errors={errors}
+                      placeholder="Enter Your Phone Number"
+                    />
 
-                  <Button className="text-black bg-white mt-8 p-2 w-40  font-bold">
-                    Request A Call
-                  </Button>
-                </Form>
-              )}
-            </Formik>
-          </Col>
-        </Row>
+                    <Button className="text-black bg-white mt-8 p-2 w-40  font-bold">
+                      Request A Call
+                    </Button>
+                  </Form>
+                )}
+              </Formik>
+            </Col>
+          </Row>
         </div>
       </div>
     </React.Fragment>

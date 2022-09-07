@@ -1,8 +1,5 @@
 import React from "react";
 import moment from "moment";
-// import Tabcomponent from "../Blogs/tabComponent";
-// import NailFingure from "../../assets/images/nailsfingure.png";
-import { Label } from "reactstrap";
 
 const BlogDetail = (props) => {
   const Data = props.location.state;
@@ -13,11 +10,11 @@ const BlogDetail = (props) => {
       <div className="container px-10"></div>
       <div className="container p-10">
         <div className="float-left ...">
-          <Label className="mx-10 mb-0">
+          <h3 className="mx-10 mb-0">
             {moment(
               Data && Data.createdAt ? Data && Data.createdAt : null
             ).format("DD/MM/YYYY")}
-          </Label>
+          </h3>
           <div>
             <img
               width="400px"
@@ -31,9 +28,9 @@ const BlogDetail = (props) => {
 
         <p> {Data && Data.article ? Data && Data.article : null}</p>
         <div className="flex justify-end">
-          <Label className="font-bold text-lg">
+          <h3 className="font-bold text-lg">
             ~ {Data && Data.authorname ? Data && Data.authorname : null}
-          </Label>
+          </h3>
         </div>
       </div>
     </React.Fragment>

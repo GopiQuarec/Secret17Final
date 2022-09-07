@@ -1,30 +1,14 @@
 import React from "react";
-import { Label,Row,Col,Button } from "reactstrap";
+import { useHistory } from "react-router-dom";
+import { Button } from "reactstrap";
 import Contact from "../../assets/images/contactUs.png";
 import Nail1 from "../../assets/images/nails/nail1.png";
 import Nail2 from "../../assets/images/nails/nail2.png";
 import Nail3 from "../../assets/images/nails/nail3.png";
 
-
 const Nails = () => {
-  const HairData = [
-    {
-      img: Nail1,
-      description:
-        "Extremely happy with the services.. great ambience and amazing staff and hospitality! Loving my nails done by Toka - she's one of nail artists in town! Extremely happy with the services..great ambience and amazing staff and hospitality Loving my nails done by Toka - she's one of nail artists in town! Extremely happy with the services.. great ambience and amazing staff and hospitality! Loving my nails done by Toka - she's one of  nail artists in town!",
-    },
-    {
-      img: Nail2,
-      description:
-        "Extremely happy with the services.. great ambience and amazing staff and hospitality! Loving my nails done by Toka - she's one of nail artists in town! Extremely happy with the services..great ambience and amazing staff and hospitality Loving my nails done by Toka - she's one of nail artists in town! Extremely happy with the services.. great ambience and amazing staff and hospitality! Loving my nails done by Toka - she's one of  nail artists in town!",
-    },
-    {
-      img: Nail3,
-      description:
-        "Extremely happy with the services.. great ambience and amazing staff and hospitality! Loving my nails done by Toka - she's one of nail artists in town! Extremely happy with the services..great ambience and amazing staff and hospitality Loving my nails done by Toka - she's one of nail artists in town! Extremely happy with the services.. great ambience and amazing staff and hospitality! Loving my nails done by Toka - she's one of  nail artists in town!",
-    },
-    
-  ];
+  const history = useHistory();
+
   return (
     <React.Fragment>
       <div className="container-fluid">
@@ -35,57 +19,156 @@ const Nails = () => {
               src={Contact}
               alt="contact"
             />
-            <h6 className="w-100 position-absolute text-white my-auto text-4xl">Nails</h6>
+            <h6 className="w-100 position-absolute text-white my-auto text-4xl">
+              Nails
+            </h6>
           </div>
         </section>
       </div>
 
       <div>
-        <Label className="text-black font-bold text-xl p-8">
-          Service Excellence and Creative Expertise defines Secret17. Since
-          2022, we have catered to more than 5000 clients with pure skill &
-          passion. Owing to our highly skilled, reliable and experienced beauty
-          therapists, hairstylists and nail technicians, Secret17 has followed
-          suit with more salons opening at various locations across Ahmedabad.
-          We have an exhaustive range of services across all branches that
-          include hair services such as haircut, hair-color, creative makeovers,
-          keratin; bridal makeup services, and spa services using the brands of
-          L’Oreal, OPI, QOD, Nashi, and many more internationally renowned
-          brands
-        </Label>
+        <h3 className="text-black text-2xl px-12 py-10">
+          Service Excellence and Creative Expertise defines <b>Secret17.</b>{" "}
+          Since 2022, we have catered to more than 5000 clients with pure skill
+          & passion. Owing to our highly skilled, reliable and experienced
+          beauty therapists, hairstylists and nail technicians, <b>Secret17</b>{" "}
+          has followed suit with more salons opening at various locations across
+          Ahmedabad. We have an exhaustive range of services across all branches
+          that include hair services such as haircut, hair-color, creative
+          makeovers, keratin; bridal makeup services, and spa services using the
+          brands of L’Oreal, OPI, QOD, Nashi, and many more internationally
+          renowned brands
+        </h3>
       </div>
-      {HairData && HairData.map((hairdata,key) => {
-        return(
-            <div className="bg-slate-200">
-        <Row>
-          <Col className="bg-white col-sm-8 mb-2">
-            <Label className="italic text-lg p-5 font-bold text-right">
-              {hairdata.description}
-            </Label>
-            <div className="flex justify-center">
-              <Button className="bg-black text-white">Read More...</Button>
+
+      <div className="bg-gray-300 border-t-2 border-black ...">
+        <div className="grid grid-cols-1 lg:grid-cols-2 grid-flow-row-dense lg:grid-flow-col">
+          <div className="bg-white w-full mb-2">
+            <h4 className="italic text-2xl p-5 text-left">
+              Extremely happy with the services.. <br /> great ambience and
+              amazing staff and hospitality! <br /> Loving my nails done by Toka
+              - she's one of nail artists in town! Extremely happy with the
+              services..great ambience and amazing staff and hospitality Loving
+              my nails done by Toka - she's one of nail artists in town!
+              Extremely happy with the services.. great ambience and amazing
+              staff and hospitality! Loving my nails done by Toka - she's one of
+              nail artists in town!
+            </h4>
+            <div className="flex justify-center  mb-8">
+              <Button
+                className="bg-black text-white"
+                onClick={() => history.push("/blogs-detail")}
+              >
+                Read More...
+              </Button>
             </div>
-          </Col>
-          <Col className="m-10">
-            <img src={hairdata.img} alt="hairblog" />
-          </Col>
-        </Row>
-        <Row>
-          <Col className="m-10">
-            <img src={hairdata.img} alt="hairblog" />
-          </Col>
-          <Col className="bg-white col-sm-8 mb-2">
-            <Label className="italic text-lg p-5 font-bold text-right">
-              {hairdata.description}
-            </Label>
-            <div className="flex justify-center">
-              <Button className="bg-black text-white">Read More...</Button>
+          </div>
+
+          <div className="flex justify-center my-5">
+            <div>
+              <h3 className="text-center text-xl mb-8 font-semibold uppercase">
+                Black & Golden
+              </h3>
+              <img
+                src={Nail1}
+                alt="hairblog"
+                width="300px"
+                height="312px"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  // marginLeft: "100px",
+                }}
+              />
             </div>
-          </Col>
-        </Row>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 grid-flow-row-dense lg:grid-flow-col">
+          <div className="flex justify-center my-5">
+            <div>
+              <h3 className="text-center text-xl mb-8 font-semibold uppercase">
+                Black & Golden
+              </h3>
+              <img
+                src={Nail2}
+                alt="hairblog"
+                width="300px"
+                height="312px"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginRight: "40px",
+                  // marginLeft: "100px",
+                }}
+              />
+            </div>
+          </div>
+          <div className="bg-white w-full mb-2">
+            <h4 className="italic text-2xl p-5 text-left">
+              Extremely happy with the services.. <br /> great ambience and
+              amazing staff and hospitality! <br /> Loving my nails done by Toka
+              - she's one of nail artists in town! Extremely happy with the
+              services..great ambience and amazing staff and hospitality Loving
+              my nails done by Toka - she's one of nail artists in town!
+              Extremely happy with the services.. great ambience and amazing
+              staff and hospitality! Loving my nails done by Toka - she's one of
+              nail artists in town!
+            </h4>
+            <div className="flex justify-center mb-8">
+              <Button
+                className="bg-black text-white"
+                onClick={() => history.push("/blogs-detail")}
+              >
+                Read More...
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 grid-flow-row-dense lg:grid-flow-col">
+          <div className="bg-white w-full mb-2">
+            <h4 className="italic text-2xl p-5 text-left">
+              Extremely happy with the services.. <br /> great ambience and
+              amazing staff and hospitality! <br /> Loving my nails done by Toka
+              - she's one of nail artists in town! Extremely happy with the
+              services..great ambience and amazing staff and hospitality Loving
+              my nails done by Toka - she's one of nail artists in town!
+              Extremely happy with the services.. great ambience and amazing
+              staff and hospitality! Loving my nails done by Toka - she's one of
+              nail artists in town!
+            </h4>
+            <div className="flex justify-center mb-8">
+              <Button
+                className="bg-black text-white"
+                onClick={() => history.push("/blogs-detail")}
+              >
+                Read More...
+              </Button>
+            </div>
+          </div>
+
+          <div className="flex justify-center my-5">
+            <div>
+              <h3 className="text-center text-xl mb-8 font-semibold uppercase">
+                Black & Golden
+              </h3>
+
+              <img
+                src={Nail3}
+                alt="hairblog"
+                width="300px"
+                height="312px"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  // marginLeft: "100px",
+                }}
+              />
+            </div>
+          </div>
+        </div>
       </div>
-        )
-      })}
     </React.Fragment>
   );
 };

@@ -49,18 +49,18 @@ const UpperSlide = () => {
         </Carousel>
       </div>
       <div>
-        <label className="text-3xl font-medium flex justify-center p-8">
+        <h1 className="text-5xl font-medium flex justify-center p-8">
           Secret 17 - One Step Solution For Your Hairs & Nails
-        </label>
+        </h1>
 
         <div className="flex justify-center">
-          <p className="text-lg w-50 text-center">
+          <p className="text-2xl w-auto text-center mx-10">
             With a view to providing a Luxurious experience for one’s styling
-            needs-for Best Hair and Best Nail Art, we have stepped into this
+            needs-for Best Hair and Best Nail Art, <br/> we have stepped into this
             industry where we cater Premium Salon services in Ahmedabad for
-            Nails and Hair. One will love to have Our Luxurious Nail and Hair
-            Salon Services in Ahmedabad Our Hair and Nail Expert always try
-            their best Salon service in Ahmedabad.
+            Nails and Hair. <br/> One will love to have Our Luxurious Nail and Hair
+            Salon Services in Ahmedabad <br/> Our Hair and Nail Expert always try
+            their best <br/> Salon service in Ahmedabad.
           </p>
         </div>
       </div>
