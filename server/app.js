@@ -17,7 +17,7 @@ app.use(cors({
 app.options("*", cors());
 app.use(express.json());
 
-app.use(require("./router/route"));
+app.use('/api',require("./router/route"));
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server is Running  at ${PORT}`);
