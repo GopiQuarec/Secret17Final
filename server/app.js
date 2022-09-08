@@ -10,7 +10,10 @@ dotenv.config({ path: ".env" });
 
 require("./db/conn");
 
-app.use(cors());
+app.use(cors({
+  origin: "*"
+  
+}));
 app.options("*", cors());
 app.use(express.json());
 
