@@ -221,7 +221,8 @@ const AddPost = () => {
 
     // console.log("URL", url);
     console.log("blogData===================", blogData);
-    const res = await axios.post("/blog", blogData);
+    const res = await axios.post(`${ process.env.REACT_APP_API_URL}/blog`, blogData);
+  
     if (res.status === 200) {
       history.push("/blogs");
       localStorage.clear();
