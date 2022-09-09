@@ -179,7 +179,7 @@ router.get("/appointments", async (req, res) => {
   router.post("/reviews", async (req, res) => {
     try {
       const { name, email, message } = req.body;
-      if (!name || !email || !phone || !message) {
+      if (!name || !email  || !message) {
         return res
           .status(400)
           .json({ message: "Please Fill the Reviews Field." });
