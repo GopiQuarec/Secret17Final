@@ -177,17 +177,22 @@ router.get("/appointments", async (req, res) => {
 }),
   //Post Reviews Data in database
   router.post("/reviews", async (req, res) => {
+    console.log(req)
+
     try {
       const { name, email, message } = req.body;
+      console.log(name, email, message);
       if (!name || !email  || !message) {
         return res
           .status(400)
           .json({ message: "Please Fill the Reviews Field." });
       } else {
         const review = new Reviews({ name, email, message });
+        console.log(review);
         await review.save();
 
         res.status(201).json({ message: "Thank you for your reviews" });
+        console.log(res.status(200).json(review));
       }
     } catch (err) {
       console.log(err);

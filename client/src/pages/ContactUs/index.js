@@ -27,6 +27,8 @@ const ContactUs = () => {
 
     Reviews(data)
       .then((response) => {
+    console.log( response)
+
         swal(
           "Thankyou for share Feedback",
           "You clicked the button!",
@@ -34,7 +36,7 @@ const ContactUs = () => {
         );
       })
       .catch((err) => {
-        console.log(err);
+        console.log("err",err);
       });
   };
 
