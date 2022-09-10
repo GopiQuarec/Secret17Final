@@ -8,9 +8,9 @@ require("../db/conn");
 const Users = require("../model/userSchema");
 const User = require("../model/appointmentSchema");
 const blogSchema = require("../model/blogSchema");
-const Reviews = require("../model/reviews");
+// const Reviews = require("../model/reviews");
+const Review = require("../model/reviews");
 const Membership = require("../model/MembershipSchema");
-
 
 router.post("/register", async (req, res) => {
   const { email, password, cpassword } = req.body;
@@ -150,45 +150,55 @@ router.get("/blog", (req, res) => {
     res.status(200).send("logout successfully");
   }),
   // Post User data to the database
- // Post User data to the database
- router.post("/appointments", async (req, res) => {
-  try {
-    const { name, email, phone } = req.body;
-    if (!name || !email || !phone) {
-      return res
-        .status(400)
-        .json({ message: "Appointment Date, Name and email are required" });
+  // Post User data to the database
+  router.post("/appointments", async (req, res) => {
+    try {
+      const { name, email, phone } = req.body;
+      if (!name || !email || !phone) {
+        return res
+          .status(400)
+          .json({ message: "Appointment Date, Name and email are required" });
+      }
+      const user = new User({ name, email, phone });
+      await user.save();
+      res.status(201).json({ message: "As soon as We Contact with  you" });
+    } catch (err) {
+      console.log(err);
     }
-    const user = new User({ name, email, phone });
-    await user.save();
-    res.status(201).json({ message: "As soon as We Contact with  you" });
-  } catch (err) {
-    console.log(err);
-  }
-}),
-// Get User data from the database
-router.get("/appointments", async (req, res) => {
-  try {
-    const appointments = await User.find();
-    res.status(200).json(appointments);
-  } catch (err) {
-    console.log(err);
-  }
-}),
+  }),
+  // Get User data from the database
+  router.get("/appointments", async (req, res) => {
+    try {
+      const appointments = await User.find();
+      res.status(200).json(appointments);
+    } catch (err) {
+      console.log(err);
+    }
+  }),
   //Post Reviews Data in database
+  // router.post("/reviews", async (req, res) => {
+  //   try {
+  //     const { name, email, message } = req.body;
+  //     if (!name || !email  || !message) {
+  //       return res
+  //         .status(400)
+  //         .json({ message: "Please Fill the Reviews Field." });
+  //     } else {
+  //       const review = new Reviews({ name, email, message });
+  //       await review.save();
+
+  //       res.status(201).json({ message: "Thank you for your reviews" });
+  //     }
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // }),
   router.post("/reviews", async (req, res) => {
     try {
       const { name, email, message } = req.body;
-      if (!name || !email  || !message) {
-        return res
-          .status(400)
-          .json({ message: "Please Fill the Reviews Field." });
-      } else {
-        const review = new Reviews({ name, email, message });
-        await review.save();
-
-        res.status(201).json({ message: "Thank you for your reviews" });
-      }
+      const review = new Review({ name, email, message });
+      await review.save();
+      res.status(201).json({ message: "Thank you for your reviews" });
     } catch (err) {
       console.log(err);
     }

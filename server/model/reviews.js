@@ -1,7 +1,27 @@
-const mongoose = require("mongoose");
-// const Schema = mongoose.Schema;
+// const mongoose = require("mongoose");
+// // const Schema = mongoose.Schema;
 
-const userSchema = new mongoose.Schema({
+// const userSchema = new mongoose.Schema({
+//   name: {
+//     type: String,
+//     required: true,
+//   },
+//   email: {
+//     type: String,
+//     required: true,
+//   },
+//   message: {
+//     type: String,
+//     required: true,
+//   },
+// });
+
+// const Review = mongoose.model("REVIEWS", userSchema);
+// module.exports = Review;
+
+const mongoose = require("mongoose");
+
+const reviewSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -15,6 +35,5 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
 });
-
-const Review = mongoose.model("REVIEWS", userSchema);
+const Review = mongoose.model("REVIEW", reviewSchema);
 module.exports = Review;
