@@ -4,6 +4,7 @@ const userSchema = new mongoose.Schema({
     type: Number,
     required: false,
   },
+},{timestamps : true
 });
 
 const membership = mongoose.model("MEMBERSHIP", userSchema);
