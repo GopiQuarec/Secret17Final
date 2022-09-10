@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import GoBack from "../../../assets/images/backTotop.png"
+import GoBack from "../../../assets/images/backto.png"
 import "./scroll.css"
 
 export default function ScrollToTop() {
@@ -34,6 +34,8 @@ export default function ScrollToTop() {
           <img
             src={GoBack}
             alt="Go to top"
+            width={50}
+            height={50}
           />
         </div>
       )}

@@ -10,6 +10,7 @@ import Portfolio from "../pages/Portfolio";
 import Service from "../pages/Service";
 import Hairs from "../pages/Service/hair";
 import AppointmentData from "../pages/Admin/Appointment";
+import MembershipData from "../pages/Admin/Membership";
 import Nails from "../pages/Service/nail";
 
 //Admin Routes
@@ -34,5 +35,6 @@ const userRoutes = [
 const authRoutes = [
   { path: "/add-blog", exact: true, component: CreateBlog },
   { path: "/appointment", exact: true, component: AppointmentData },
+  { path: "/membership", exact: true, component: MembershipData },
 ];
 export { userRoutes, authRoutes };

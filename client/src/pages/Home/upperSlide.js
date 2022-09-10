@@ -9,8 +9,6 @@ import Slide1Image from "../../assets/images/slide1.png";
 // import "slick-carousel/slick/slick-theme.css";
 
 const UpperSlide = () => {
-  
-
   const Images = [
     {
       imageSrc: Slide1Image,
@@ -49,18 +47,18 @@ const UpperSlide = () => {
         </Carousel>
       </div>
       <div>
-        <h1 className="text-5xl font-medium flex justify-center p-8">
+        <h1 className=" text-3xl lg:text-5xl font-medium flex justify-center text-center p-8">
           Secret 17 - One Step Solution For Your Hairs & Nails
         </h1>
 
         <div className="flex justify-center">
           <p className="text-2xl w-auto text-center mx-10">
             With a view to providing a Luxurious experience for one’s styling
-            needs-for Best Hair and Best Nail Art, <br/> we have stepped into this
-            industry where we cater Premium Salon services in Ahmedabad for
-            Nails and Hair. <br/> One will love to have Our Luxurious Nail and Hair
-            Salon Services in Ahmedabad <br/> Our Hair and Nail Expert always try
-            their best <br/> Salon service in Ahmedabad.
+            needs-for Best Hair and Best Nail Art, <br /> we have stepped into
+            this industry where we cater Premium Salon services in Ahmedabad for
+            Nails and Hair. <br /> One will love to have Our Luxurious Nail and
+            Hair Salon Services in Ahmedabad <br /> Our Hair and Nail Expert
+            always try their best <br /> Salon service in Ahmedabad.
           </p>
         </div>
       </div>

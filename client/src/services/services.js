@@ -46,6 +46,21 @@ export const GetAppointment = () => {
   });
 };
 
+export const GetMembership = () => {
+  return new Promise(async (resolve, reject) => {
+    return api
+      .get(url.MEMBERSHIP_URL)
+      .then((response) => {
+        if (response) {
+          resolve(response);
+        }
+      })
+      .catch((err) => {
+        reject(err.response);
+      });
+  });
+};
+
 export const Membership = (data) => {
   return new Promise(async (resolve, reject) => {
     return api

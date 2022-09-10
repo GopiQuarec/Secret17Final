@@ -19,6 +19,7 @@ const Authmiddleware = ({
     // {...rest}
 
     render={(props) => {
+      console.log("----props----",props)
       if (isAuthProtected && !localStorage.getItem(STORAGEKEY.ACCESSTOKEN)) {
         return (
           <Redirect
@@ -28,7 +29,7 @@ const Authmiddleware = ({
       }
       return (
         <React.Fragment>
-          {path === "/admin" || path === "/add-blog" ? null : <HeaderRes />}
+          {path === "/admin" || path === "/add-blog" || path === "/appointment" || path === "/membership" ? null : <HeaderRes />}
 
           <Component {...props} />
           <ScrollToTop/>
@@ -36,7 +37,7 @@ const Authmiddleware = ({
             <FooterDark />
           ) : (
             <Footer /> &&
-            (path === "/add-blog" || path === "/admin" ? null : <Footer />)
+            (path === "/add-blog" || path === "/admin" || path === "/appointment" || path === "/membership" ? null : <Footer />)
           )}
         </React.Fragment>
       );

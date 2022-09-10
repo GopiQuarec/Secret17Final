@@ -52,7 +52,7 @@ const Footer = () => {
             </h4>
           </div>
 
-          <div className="ml-20">
+          <div className="ml-0 lg:ml-20">
             <div className="animate-fade-in-down mb-1 text-xl text-black font-bold mt-2 ">
               Important Links
             </div>
