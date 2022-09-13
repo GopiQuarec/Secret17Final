@@ -8,8 +8,7 @@ require("../db/conn");
 const Users = require("../model/userSchema");
 const User = require("../model/appointmentSchema");
 const blogSchema = require("../model/blogSchema");
-// const Reviews = require("../model/reviews");
-const Review = require("../model/reviews");
+const Review = require("../model/reviewsSchema");
 const Membership = require("../model/MembershipSchema");
 const moment = require("moment");
 
