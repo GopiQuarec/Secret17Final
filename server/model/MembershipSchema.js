@@ -2,8 +2,11 @@ const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
   number: {
     type: Number,
-    required: false,
+    required: true,
   },
+  created_date:{
+    type: Date,
+  }
 },{timestamps : true
 });
 

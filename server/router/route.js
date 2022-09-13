@@ -11,6 +11,8 @@ const blogSchema = require("../model/blogSchema");
 // const Reviews = require("../model/reviews");
 const Review = require("../model/reviews");
 const Membership = require("../model/MembershipSchema");
+const moment = require("moment");
+
 
 router.post("/register", async (req, res) => {
   const { email, password, cpassword } = req.body;
@@ -54,7 +56,6 @@ router.post("/signin", async (req, res) => {
       } else {
         // need to genereate the token and stored cookie after the password match
         token = await userLogin.generateAuthToken();
-        console.log(token);
 
         res.cookie("jwtoken", token, {
           expires: new Date(Date.now() + 25892000000),
@@ -77,7 +78,6 @@ router.post("/blog", async (req, res) => {
   try {
     const blog = await blogSchema.create(req.body);
     res.status(200).send(blog);
-    console.log(blog);
   } catch (err) {
     res.status(500).send(err);
   }
@@ -96,7 +96,6 @@ router.get("/blog", (req, res) => {
     var regex = new RegExp(req.params.id);
     blogSchema.find({ id: regex }).then((result) => {
       res.status(200).json(result);
-      console.log(result);
     });
   }),
   // delete blog data
@@ -207,7 +206,8 @@ router.get("/blog", (req, res) => {
   router.post("/membership", async (req, res) => {
     try {
       const { number } = req.body;
-      const membership = new Membership({ number });
+      const date = moment().format("yyyy-MM-dd  HH:mm:ss ");
+      const membership = new Membership({ number, date });
       await membership.save();
       res.status(201).json({ message: "Thank you for your membership" });
     } catch (err) {
