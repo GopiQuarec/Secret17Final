@@ -7,7 +7,7 @@ export const LOGIN_URL = "signin";
 export const APPLICATION_URL = "appointments";
 
 // ? Review URL
-export const REVIEW_URL = "reviews";
+export const REVIEW_URL = "review";
 
 // ? Membership URL
 export const MEMBERSHIP_URL = "membership";

@@ -173,7 +173,7 @@ router.get("/blog", (req, res) => {
     }
   }),
   //Post Reviews Data in database
-  router.post("/reviews", async (req, res) => {
+  router.post("/review", async (req, res) => {
     try {
       const { name, email, message } = req.body;
       const date = moment().format();
