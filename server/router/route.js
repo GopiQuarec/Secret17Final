@@ -13,7 +13,6 @@ const Review = require("../model/reviews");
 const Membership = require("../model/MembershipSchema");
 const moment = require("moment");
 
-
 router.post("/register", async (req, res) => {
   const { email, password, cpassword } = req.body;
 
@@ -175,29 +174,20 @@ router.get("/blog", (req, res) => {
     }
   }),
   //Post Reviews Data in database
-  // router.post("/reviews", async (req, res) => {
-  //   try {
-  //     const { name, email, message } = req.body;
-  //     if (!name || !email  || !message) {
-  //       return res
-  //         .status(400)
-  //         .json({ message: "Please Fill the Reviews Field." });
-  //     } else {
-  //       const review = new Reviews({ name, email, message });
-  //       await review.save();
-
-  //       res.status(201).json({ message: "Thank you for your reviews" });
-  //     }
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }),
   router.post("/reviews", async (req, res) => {
     try {
       const { name, email, message } = req.body;
-      const review = new Review({ name, email, message });
-      await review.save();
-      res.status(201).json({ message: "Thank you for your reviews" });
+      const date = moment().format();
+      const reviews = new Review({
+        name: name,
+        email: email,
+        message: message,
+        date: date,
+      });
+      const finalData = await reviews.save();
+      res
+        .status(201)
+        .json({ message: "Thank you for your Reviews", finalData });
     } catch (err) {
       console.log(err);
     }

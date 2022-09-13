@@ -1,14 +1,17 @@
 const mongoose = require("mongoose");
-const userSchema = new mongoose.Schema({
-  number: {
-    type: Number,
-    required: true,
-  },
-  created_date:{
-    type: Date,
-  }
-},{timestamps : true
-});
 
-const membership = mongoose.model("MEMBERSHIP", userSchema);
+const membershipSchema = new mongoose.Schema(
+  {
+    number: {
+      type: Number,
+      required: false,
+    },
+    date: {
+      type: Date,
+    },
+  },
+);
+
+// collection creation
+const membership = mongoose.model("MEMBERSHIP", membershipSchema);
 module.exports = membership;

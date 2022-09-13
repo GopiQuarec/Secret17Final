@@ -13,10 +13,6 @@ const userSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  // timeStempt: {
-  //   // name: { type: String, required: true, trim: true },
-  //   created_at: { type: Date, required: true, default: Date.now },
-  // },
 },{timestamps : true
 });
 
