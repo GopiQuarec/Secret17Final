@@ -173,60 +173,36 @@ router.get("/blog", (req, res) => {
     }
   }),
   //Post Reviews Data in database
-  // router.post("/review", async (req, res) => {
-  //   try {
-  //     const { name, email, message } = req.body;
-  //     const date = moment().format();
-  //     const reviews = new Review({
-  //       name: name,
-  //       email: email,
-  //       message: message,
-  //       date: date,
-  //     });
-  //     const finalData = await reviews.save();
-  //     res
-  //       .status(201)
-  //       .json({ message: "Thank you for your Reviews", finalData });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }),
-  router.post("/review", async function (req, res) {
+  router.post("/review", async (req, res) => {
     try {
       const { name, email, message } = req.body;
       const date = moment().format();
-      const review = new Review({
+      const reviews = new Review({
         name: name,
         email: email,
         message: message,
         date: date,
       });
-      const finalData = await review.save();
-      res.status(201).json({ message: "thankyou", finalData });
+      const finalData = await reviews.save();
+      res
+        .status(201)
+        .json({ message: "Thank you for your Reviews", finalData });
     } catch (err) {
-      console.log("Error", err);
+      console.log(err);
     }
-  });
-router.get("/review", async function (req, res) {
-  try {
-    const review = await Review.find();
-    res.status(200).json(review);
-  } catch (err) {
-    console.log(err);
-  }
-});
-// Post Salon Membership Data in database
-router.post("/membership", async (req, res) => {
-  try {
-    const { number } = req.body;
-    const date = moment().format("yyyy-MM-dd  HH:mm:ss ");
-    const membership = new Membership({ number, date });
-    await membership.save();
-    res.status(201).json({ message: "Thank you for your membership" });
-  } catch (err) {
-    console.log(err);
-  }
-}),
+  }),
+  // Post Salon Membership Data in database
+  router.post("/membership", async (req, res) => {
+    try {
+      const { number } = req.body;
+      const date = moment().format("yyyy-MM-dd  HH:mm:ss ");
+      const membership = new Membership({ number, date });
+      await membership.save();
+      res.status(201).json({ message: "Thank you for your membership" });
+    } catch (err) {
+      console.log(err);
+    }
+  }),
   // Get Salon Membership Data from the database
   router.get("/membership", async (req, res) => {
     try {
