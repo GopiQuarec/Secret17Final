@@ -10,7 +10,7 @@ const Memberships = ({ membershipData, GetAppontmentData, index }) => {
       </td>
       <td style={{ padding: 20 }}>
         {moment(
-          membershipData.createdAt ? membershipData.createdAt : "-"
+          membershipData.date ? membershipData.date : "-"
         ).format("YYYY-MM-DD")}
       </td>
     </>
