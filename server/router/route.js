@@ -204,7 +204,7 @@ router.get("/blog", (req, res) => {
       const finalData = await review.save();
       res.status(201).json({ message: "thankyou", finalData });
     } catch (err) {
-      cnsole.log("Error", err);
+      console.log("Error", err);
     }
   });
 router.get("/review", async function (req, res) {
