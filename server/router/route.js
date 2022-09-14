@@ -204,7 +204,7 @@ router.get("/blog", (req, res) => {
 router.post("/membership", async (req, res) => {
   try {
     const { number } = req.body;
-    const date = moment().format("yyyy-MM-dd  HH:mm:ss ");
+    const date = moment().format();
     const membership = new Membership({ number, date });
     await membership.save();
     res.status(201).json({ message: "Thank you for your membership" });
